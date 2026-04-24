@@ -14,18 +14,24 @@ st.write(f"Your age is {age}")
 option = st.selectbox("Choose your favorite color:",
                       ["Red", "Blue", "Green"])
 st.write(f"You selected: {option}")
+import streamlit as st
+
 if "click_count" not in st.session_state:
     st.session_state.click_count = 0
 
 if st.button("Click Me"):
     st.session_state.click_count += 1
 
-if st.session_state.click_count == 1:
-    st.write("Button clicked!")
-elif st.session_state.click_count >= 2:
-    st.write("click too much!")
-else:
+if st.button("Reset"):
+    st.session_state.click_count = 0
+
+if st.session_state.click_count == 0:
     st.write("why you dont click???")
+elif st.session_state.click_count == 1:
+    st.write("Button clicked!")
+else:
+    st.write("click too much!")
+  
 st.success("Operation completed successfully!")
 st.write("Operation completed successfully!")
 st.header("Operation completed successfully!")
