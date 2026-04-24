@@ -13,7 +13,7 @@ st.title("Please enter the monthly sales target and select the region")
 target = st.number_input("Enter Monthly Sales Target(in USD):",
                       min_value=0,
                       max_value=50000,
-                      value=1000)
+                      value=50000)
 
 
 # Dropdown for region selection
