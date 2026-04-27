@@ -1,6 +1,7 @@
+import streamlit as st
 import math
 
-st.write("Scientific Functions")
+st.header("Scientific Functions")
 operation_sci = st.selectbox("Choose scientific operation", ["Square Root", "Power", "Sin", "Cos", "Tan"])
 
 value = st.number_input("Enter value", value=0.0)
