@@ -1,6 +1,6 @@
 import math
 
-st.header("Scientific Functions")
+st.write("Scientific Functions")
 operation_sci = st.selectbox("Choose scientific operation", ["Square Root", "Power", "Sin", "Cos", "Tan"])
 
 value = st.number_input("Enter value", value=0.0)
