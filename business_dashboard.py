@@ -20,7 +20,7 @@ with col3:
     st.write("Revenue: $1.3M")
 
 # Tabs Layout
-tab1, tab2, tab3 = st.tabs(["Sales Data", "Customer Insights", "Market Trends"])
+tab1, tab2, tab3,tab4 = st.tabs(["Sales Data", "Customer Insights", "Market Trends","Market Performance"])
 with tab1:
     st.write("Content for Sales Data")
     sales_data = {
