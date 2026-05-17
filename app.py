@@ -1,37 +1,16 @@
+import pandas as pd
 import streamlit as st
 
-st.title("Welcome to Streamlit")
+# Sample data
+data = {'Product': ['A', 'B', 'C'], 
+        'Sales': [1200, 850, 950], 
+        'Customers': [300, 400, 350]}
+df = pd.DataFrame(data)
 
-st.header("ISOM3400")
-st.write("**Bold Text** and *Italic Text*")
+# Show data with Streamlit elements
+st.dataframe(df)                # Interactive table
+st.data_editor(df)              # Editable table
+st.table(df)                    # Static table
 
-age = st.number_input("Enter your age:",
-                      min_value=0,
-                      max_value=120,
-                      value=25)
-st.write(f"Your age is {age}")
-
-option = st.selectbox("Choose your favorite color:",
-                      ["Red", "Blue", "Green"])
-st.write(f"You selected: {option}")
-import streamlit as st
-
-if "click_count" not in st.session_state:
-    st.session_state.click_count = 0
-
-if st.button("Click Me"):
-    st.session_state.click_count += 1
-
-if st.button("Reset"):
-    st.session_state.click_count = 0
-
-if st.session_state.click_count == 0:
-    st.write("why you dont click???")
-elif st.session_state.click_count == 1:
-    st.write("Button clicked!")
-else:
-    st.write("click too much!")
-  
-st.success("Operation completed successfully!")
-st.write("Operation completed successfully!")
-st.header("Operation completed successfully!")
+# Customize columns directly in the dataframe display
+st.dataframe(df.style.format({'Sales': '${:,.0f}', 'Customers': '{:,.0f}'}))
